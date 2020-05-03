@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J_J</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<body>
+    <div class="flex items-center justify-center" style="height: 100vh; background: url(/fat.jpg)">
+        <div id="image-1" class="animated infinite heartBeat">
+            <img src="/iu-2.png" style="border: 10px solid black; width: 30vw;" />
+        </div>
+    </div>
+    <a id="image-2" href="/ticket.pdf" class="block absolute" style="top: -80vh; width: 100%;">
+        <img src="/poster.jpg" style="height: 80vh; margin: auto;border: 10px solid red;" />
+    </a>
+
+    <script>
+        const image1 = document.getElementById('image-1')
+        const image2 = document.getElementById('image-2')
+        image1.addEventListener('click', () => {
+            image1.classList.remove('infinite')
+            image1.classList.add('animated', 'bounceOutLeft')
+            const intervalId = setInterval(() => {
+                let top = Number.parseFloat(image2.style.top)
+                if (top > 5) {
+                    clearInterval(intervalId)
+                    return
+                }
+
+                top += 0.8
+                image2.style.top = top + 'vh'
+            }, 16)
+        })
+    </script>
+</body>
+</html>
