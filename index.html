@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="flex items-center justify-center" style="height: 100vh; background: url(/fat.jpg); background-size: 10vw;">
-        <div id="image-1" class="animated infinite heartBeat">
-            <img src="/iu-2.png" style="border: 10px solid black; width: 30vw;" />
+        <div id="image-1" class="infinite heartBeat">
+            <img src="/iu-2.png" style="border: 10px solid black; width: 60vw;" />
         </div>
     </div>
     <a id="image-2" href="/ticket.pdf" class="block absolute" style="top: -80vh; width: 100%;">
@@ -19,6 +19,7 @@
 
     <script>
         const image1 = document.getElementById('image-1')
+            image1.classList.add('animated')
         const image2 = document.getElementById('image-2')
         image1.addEventListener('click', () => {
             image1.classList.remove('infinite')
